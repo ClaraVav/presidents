@@ -5,7 +5,7 @@ $(function(){
         if ($(this).nextUntil('h4').is(':hidden')) {
             $(this).css({'background-color':'#048'});
         } else {
-            $(this).css({'background-color':'#444'});
+            $(this).css({'background-color':'#666'});
         }
         $(this).nextUntil('h4').toggle(1000);
     });

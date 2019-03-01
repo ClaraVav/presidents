@@ -32,8 +32,9 @@ h3 {
     background-color: #666;
     color: white;
     font-weight: 400;
-    padding: 0.3em;
+    padding: 0.8em;
     font-size: 1.1em;
+    font-weight: bold;
 }
 
 #ustava h4:hover {
