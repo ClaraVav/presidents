@@ -1,3 +1,4 @@
+// "borned" - this hurts, because it's supposed to be "born"
 var prezidenti = [
     {
         "name":"Tomáš Garrigue Masaryk",

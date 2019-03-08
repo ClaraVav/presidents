@@ -24,10 +24,20 @@ $(function(){
 
     /* Po kliknutí na obrázek se náhodně mění fotky prezidentů */
     var foto = $('#kviz img');
-    foto.on('click', function(){
+    foto.on('click', function(event){
         var index = Math.floor(Math.random()*prezidenti.length);
         $(this).attr('src','img/'+prezidenti[index].photo)
-               .attr('alt',prezidenti[index].name);
+            .attr('alt',prezidenti[index].name);
+        console.log(event);
+        if (event.ctrlKey) {
+            $('#myModal .modal-title').text(prezidenti[index].name);
+            $('#myModal img').attr('src','img/'+prezidenti[index].photo);
+            $('#myModal #birth').text(prezidenti[index].borned);
+            $('#myModal #death').text(prezidenti[index].died);
+            $('#myModal #popis').text(prezidenti[index].description);
+            $('#myModal a').attr('href', prezidenti[index].link);
+            $('#myModal').modal('show');
+        }
     });
 
     /* Po kliknutí na tlačítko Ověřit se barevně ohraničí fotky */
@@ -43,6 +53,7 @@ $(function(){
         });
     });
 
+    /* Sídla */
     var i = 0;
     window.setInterval(function(){
         $('#sidlo img').attr('src','img/'+sidla[i].photo);
@@ -50,11 +61,11 @@ $(function(){
         i<sidla.length-1 ? i++ : i=0; 
     }, 3000);
 
+    /* Perličky */
     function zmenaTextu(i){
         $('#perlicky article h4').text(perlicky[i].title);
         $('#perlicky article p').text(perlicky[i].text);
     }
-
     var a = 0;
     zmenaTextu(a);
     $('#perlicky button').on('click',function(){
